@@ -1,6 +1,6 @@
 /*
- * Developed by Emanuel Cepoi on 6/9/19 10:58 PM.
- * Last modified 6/9/19 10:57 PM.
+ * Developed by Emanuel Cepoi on 6/10/19 1:39 AM.
+ * Last modified 6/9/19 11:11 PM.
  * Copyright (c) 2019. All rights reserved
  */
 
@@ -81,7 +81,7 @@ class AnimationsScreen extends Component {
             this.setState({yAxisEnd: false})
         }
 
-    }
+    };
 
     render() {
         return (

@@ -1,6 +1,6 @@
 /*
- * Developed by Emanuel Cepoi on 6/9/19 9:45 PM.
- * Last modified 6/9/19 9:45 PM.
+ * Developed by Emanuel Cepoi on 6/10/19 1:39 AM.
+ * Last modified 6/10/19 1:18 AM.
  * Copyright (c) 2019. All rights reserved
  */
 
@@ -30,6 +30,14 @@ class MainHome extends Component {
                    </TouchableOpacity>
                    {/*Ending of proof item*/}
 
+                   {/*Beginning of proof item*/}
+                   <TouchableOpacity onPress = {() => Actions.xMovementScreen() }>
+                       <View style={styles.proofItem}>
+                           <Text style={styles.proofItemTitle}> X Axis Movement Gesture </Text>
+                       </View>
+                   </TouchableOpacity>
+                   {/*Ending of proof item*/}
+
                </View>
                {/*  Ending of proffs list*/}
 
@@ -46,7 +54,8 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 40,
         backgroundColor: '#fff',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginTop: 10
     },
 
     proofItemTitle: {

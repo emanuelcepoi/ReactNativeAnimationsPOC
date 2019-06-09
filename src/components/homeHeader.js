@@ -1,3 +1,9 @@
+/*
+ * Developed by Emanuel Cepoi on 6/10/19 1:39 AM.
+ * Last modified 6/10/19 1:37 AM.
+ * Copyright (c) 2019. All rights reserved
+ */
+
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from "react-native";
 
@@ -6,7 +12,7 @@ class HomeHeader extends Component {
         return (
             <View style={styles.homeHeader}>
                 <View style={styles.headerTextsContainer}>
-                    <Text style={styles.firstHeaderText}> RN Advanced Gestures POC</Text>
+                    <Text style={styles.firstHeaderText}> React Native Gestures PoC</Text>
                     <Text style={styles.secondHeaderText}>Emanuel Cepoi</Text>
                 </View>
             </View>

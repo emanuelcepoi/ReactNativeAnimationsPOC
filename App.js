@@ -1,6 +1,6 @@
 /*
- * Developed by Emanuel Cepoi on 6/10/19 1:39 AM.
- * Last modified 6/10/19 1:39 AM.
+ * Developed by Emanuel Cepoi on 6/10/19 2:03 AM.
+ * Last modified 6/10/19 1:46 AM.
  * Copyright (c) 2019. All rights reserved
  */
 
@@ -9,6 +9,7 @@ import MainHome from "./src/screens/mainHome";
 import {Router, Scene, Stack} from 'react-native-router-flux';
 import AnimationsScreen from "./src/screens/animationsScreen";
 import XMovementScreen from "./src/screens/xMovementScreen";
+import YMovementScreen from "./src/screens/yMovementScreen";
 
 
 export default class App extends Component {
@@ -19,6 +20,7 @@ export default class App extends Component {
             <Scene key={"homeScreen"} component={MainHome} title={"Home"} hideNavBar={true} initial={true}/>
             <Scene key={"animationsScreen"} component={AnimationsScreen} title={"Animations"} />
             <Scene key={"xMovementScreen"} component={XMovementScreen} title={"X Axis Movement Gesture"} />
+            <Scene key={"yMovementScreen"} component={YMovementScreen} title={"Y Axis Movement Gesture"} />
         </Stack>
       </Router>
     );

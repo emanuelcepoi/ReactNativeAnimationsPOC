@@ -1,6 +1,6 @@
 /*
- * Developed by Emanuel Cepoi on 6/9/19 10:38 PM.
- * Last modified 6/9/19 10:38 PM.
+ * Developed by Emanuel Cepoi on 6/9/19 10:58 PM.
+ * Last modified 6/9/19 10:57 PM.
  * Copyright (c) 2019. All rights reserved
  */
 
@@ -15,8 +15,11 @@ class AnimationsScreen extends Component {
             fadeValue: new Animated.Value(1),
             fadedState: false,
 
-            xValue: new Animated.Value(1),
-            xAxisEnd: false
+            xValue: new Animated.Value(0),
+            xAxisEnd: false,
+
+            yValue: new Animated.Value(0),
+            yAxisEnd: false
         }
     }
 
@@ -40,7 +43,6 @@ class AnimationsScreen extends Component {
     };
 
     _moveOnX = () => {
-
         if(!this.state.xAxisEnd) {
             Animated.timing(this.state.xValue, {
                 toValue: 300,
@@ -58,13 +60,33 @@ class AnimationsScreen extends Component {
 
             this.setState({xAxisEnd: false})
         }
-
     };
+
+    _moveOnY = () => {
+        if(!this.state.yAxisEnd) {
+            Animated.timing(this.state.yValue, {
+                toValue: 100,
+                duration: 1000,
+                asing: Easing.linear()
+            }).start();
+
+            this.setState({yAxisEnd: true})
+        } else {
+            Animated.timing(this.state.yValue, {
+                toValue: 0,
+                duration: 1000,
+                asing: Easing.linear()
+            }).start();
+
+            this.setState({yAxisEnd: false})
+        }
+
+    }
 
     render() {
         return (
             <ScrollView>
-               <View style={styles.animationCategory}>
+               <View style={[styles.animationCategory, {alignItems: 'center'}]}>
                    {/* Beginning of fade out animation */}
                    <View style={styles.categoryTitleContainer}>
                        <Text style={styles.categoryTitle}>Fade Animation</Text>
@@ -79,7 +101,7 @@ class AnimationsScreen extends Component {
 
                 {/* Ending of fade out animation*/}
 
-                   {/* Beginning of x axis movement*/}
+                {/* Beginning of x axis movement*/}
                 <View style={styles.animationCategory}>
 
                 <View style={[styles.categoryTitleContainer]}>
@@ -92,6 +114,22 @@ class AnimationsScreen extends Component {
                        </TouchableOpacity>
                   {/* Ending of x axis movement */}
                 </View>
+
+                 {/* Beginning of y axis movement*/}
+                <View style={[styles.animationCategory, {height: 300, alignItems: 'center'}]}>
+
+                    <View style={[styles.categoryTitleContainer]}>
+                        <Text style={styles.categoryTitle}>Y Axis movement</Text>
+                    </View>
+
+                    <Animated.View style={[styles.firstSquare, {height: 20, width: 20, top: this.state.yValue}]}></Animated.View>
+                    <TouchableOpacity style={[styles.button, {top: 100}]} onPress={() => this._moveOnY()}>
+                        <Text style={styles.buttonText}>Start</Text>
+                    </TouchableOpacity>
+                    {/* Ending of x axis movement */}
+                </View>
+                 {/* Ending of y axis movement*/}
+
 
             </ScrollView>
         );

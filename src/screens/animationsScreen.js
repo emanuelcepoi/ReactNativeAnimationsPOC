@@ -1,11 +1,11 @@
 /*
- * Developed by Emanuel Cepoi on 6/9/19 9:45 PM.
- * Last modified 6/9/19 9:45 PM.
+ * Developed by Emanuel Cepoi on 6/9/19 10:38 PM.
+ * Last modified 6/9/19 10:38 PM.
  * Copyright (c) 2019. All rights reserved
  */
 
 import React, {Component} from 'react';
-import {Animated, ScrollView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Animated, Easing, ScrollView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 class AnimationsScreen extends Component {
     constructor(props) {
@@ -13,7 +13,10 @@ class AnimationsScreen extends Component {
 
         this.state = {
             fadeValue: new Animated.Value(1),
-            fadedState: false
+            fadedState: false,
+
+            xValue: new Animated.Value(1),
+            xAxisEnd: false
         }
     }
 
@@ -36,6 +39,28 @@ class AnimationsScreen extends Component {
         }
     };
 
+    _moveOnX = () => {
+
+        if(!this.state.xAxisEnd) {
+            Animated.timing(this.state.xValue, {
+                toValue: 300,
+                duration: 1000,
+                asing: Easing.linear
+            }).start();
+
+            this.setState({xAxisEnd: true})
+        } else {
+            Animated.timing(this.state.xValue, {
+                toValue: 0,
+                duration: 1000,
+                asing: Easing.linear
+            }).start();
+
+            this.setState({xAxisEnd: false})
+        }
+
+    };
+
     render() {
         return (
             <ScrollView>
@@ -43,14 +68,31 @@ class AnimationsScreen extends Component {
                    {/* Beginning of fade out animation */}
                    <View style={styles.categoryTitleContainer}>
                        <Text style={styles.categoryTitle}>Fade Animation</Text>
-                       <Animated.View style={[styles.firstSquare, {opacity: this.state.fadeValue}]}></Animated.View>
+                   </View>
+
+                   <Animated.View style={[styles.firstSquare, {opacity: this.state.fadeValue}]}></Animated.View>
                        <TouchableOpacity style={styles.button} onPress={() => this._fadeAnimation()}>
                            <Text style={styles.buttonText}>Start</Text>
                        </TouchableOpacity>
-                   </View>
-                   {/* Ending of fade out animation*/}
 
                </View>
+
+                {/* Ending of fade out animation*/}
+
+                   {/* Beginning of x axis movement*/}
+                <View style={styles.animationCategory}>
+
+                <View style={[styles.categoryTitleContainer]}>
+                       <Text style={styles.categoryTitle}>X Axis movement</Text>
+                </View>
+
+                    <Animated.View style={[styles.firstSquare, {left: this.state.xValue}]}></Animated.View>
+                       <TouchableOpacity style={styles.button} onPress={() => this._moveOnX()}>
+                           <Text style={styles.buttonText}>Start</Text>
+                       </TouchableOpacity>
+                  {/* Ending of x axis movement */}
+                </View>
+
             </ScrollView>
         );
     }

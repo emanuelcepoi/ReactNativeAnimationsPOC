@@ -1,5 +1,11 @@
+/*
+ * Developed by Emanuel Cepoi on 6/9/19 9:45 PM.
+ * Last modified 6/9/19 9:45 PM.
+ * Copyright (c) 2019. All rights reserved
+ */
+
 import React, {Component} from 'react';
-import {View, Text, TouchableOpacity, StyleSheet, ScrollView, Animated} from 'react-native';
+import {Animated, ScrollView, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 class AnimationsScreen extends Component {
     constructor(props) {
@@ -12,7 +18,7 @@ class AnimationsScreen extends Component {
     }
 
     _fadeAnimation = () => {
-
+        // Is the box being displayed?
         if(!this.state.fadedState){
             Animated.timing(this.state.fadeValue, {
                 toValue: 0,
@@ -53,8 +59,9 @@ class AnimationsScreen extends Component {
 const styles = StyleSheet.create({
     animationCategory: {
         width: '100%',
-        height: 300,
-        backgroundColor: '#fff'
+        height: 'auto',
+        backgroundColor: '#fff',
+        padding: 10
     },
     categoryTitleContainer: {
         alignItems: 'center',
@@ -62,7 +69,7 @@ const styles = StyleSheet.create({
     },
     categoryTitle: {
         color: '#000',
-        fontSize: 15,
+        fontSize: 20,
         fontWeight: 'bold'
     },
     firstSquare: {

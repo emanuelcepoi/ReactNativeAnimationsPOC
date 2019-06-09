@@ -1,5 +1,11 @@
+/*
+ * Developed by Emanuel Cepoi on 6/9/19 9:45 PM.
+ * Last modified 6/9/19 9:45 PM.
+ * Copyright (c) 2019. All rights reserved
+ */
+
 import React, {Component} from 'react';
-import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import HomeHeader from "../components/homeHeader";
 import {Actions} from 'react-native-router-flux';
 
@@ -49,7 +55,7 @@ const styles = StyleSheet.create({
         fontSize: 17,
         marginLeft: 5
     }
-})
+});
 
 
 

@@ -1,0 +1,3 @@
+rootProject.name = 'gamespoc'
+
+include ':app'

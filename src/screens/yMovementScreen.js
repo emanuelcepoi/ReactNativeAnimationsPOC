@@ -1,6 +1,6 @@
 /*
- * Developed by Emanuel Cepoi on 6/10/19 2:03 AM.
- * Last modified 6/10/19 2:03 AM.
+ * Developed by Emanuel Cepoi on 6/10/19 2:30 AM.
+ * Last modified 6/10/19 2:13 AM.
  * Copyright (c) 2019. All rights reserved
  */
 
@@ -35,7 +35,7 @@ class YMovementScreen extends Component {
                 </View>
                 <View style={styles.itemsContainer}>
                     <View style={styles.squareContainer}>
-                        <View {...this._panResponder.panHandlers} style={[styles.square, {marginTop: this.state.yValue}]} />
+                        <View {...this._panResponder.panHandlers} style={[styles.square, {top: this.state.yValue}]} />
                     </View>
                 </View>
 

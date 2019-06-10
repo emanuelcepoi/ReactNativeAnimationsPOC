@@ -1,6 +1,6 @@
 /*
- * Developed by Emanuel Cepoi on 6/10/19 2:30 AM.
- * Last modified 6/10/19 2:16 AM.
+ * Developed by Emanuel Cepoi on 6/10/19 3:22 AM.
+ * Last modified 6/10/19 2:35 AM.
  * Copyright (c) 2019. All rights reserved
  */
 
@@ -50,6 +50,14 @@ class MainHome extends Component {
                    <TouchableOpacity onPress = {() => Actions.bothAxisMovementScreen() }>
                        <View style={styles.proofItem}>
                            <Text style={styles.proofItemTitle}> Both Axis Movement Gesture </Text>
+                       </View>
+                   </TouchableOpacity>
+                   {/*Ending of proof item*/}
+
+                   {/*Beginning of proof item*/}
+                   <TouchableOpacity onPress = {() => Actions.touchedAreasScreen() }>
+                       <View style={styles.proofItem}>
+                           <Text style={styles.proofItemTitle}> Touched Areas Highlight </Text>
                        </View>
                    </TouchableOpacity>
                    {/*Ending of proof item*/}
